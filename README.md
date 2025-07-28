@@ -1,4 +1,4 @@
-## 🛠 기술 스택
+## 기술 스택
 
 | 분류 | 기술 |
 |------|------|
@@ -8,6 +8,8 @@
 | 백엔드 프레임워크 | <img src="https://img.shields.io/badge/-Flask-343422.svg?logo=Flask&style=for-the-badge&logoColor=white"> |
 | AI 모델 | <img src="https://img.shields.io/badge/-Clova AI-343422.svg?logo=Naver&style=for-the-badge&logoColor=03C75A"> |
 
+### 현재 배포중인 테스트 플랫폼
+https://ai3-client-eight.vercel.app/
 
 ## 메인페이지
 
