@@ -79,23 +79,18 @@
 
 ---
 ## 📰 최근 인사이트
-<table>
-  <tr>
-    <td align="center">
-      <img width="300" alt="시장적뉴스" src="https://github.com/user-attachments/assets/44900363-6415-4393-af70-c2c0ce7d3dd9" /><br>
-      시장적 뉴스 요약본
-    </td>
-    <td align="center">
-      <img width="300" alt="비시장적 뉴스" src="https://github.com/user-attachments/assets/42923ed3-0a9b-4840-ad9b-2b8c33aa3612" /><br>
+<div align="center"> <table> <tr> <td align="center"> <img width="300" alt="시장적뉴스" src="https://github.com/user-attachments/assets/44900363-6415-4393-af70-c2c0ce7d3dd9" /><br><br> <strong>시장적 뉴스 요약본</strong> </td> <td align="center"> <img width="300" alt="비시장적 뉴스" src="https://github.com/user-attachments/assets/42923ed3-0a9b-4840-ad9b-2b8c33aa3612" /><br><br> <strong>비시장적 뉴스 요약본</strong> </td> </tr> </table> </div>
+1. 뉴스 점수화
+위의 산출된 공식과 동일하게 뉴스를 점수화하여, 직관적으로 뉴스에 대한 AI의 판단을 시각화합니다.
 
-      비시장적 뉴스 요약본
-    </td>
-  </tr>
-</table>
-1. **뉴스 점수화**  
-   - 위의 산출된 공식과 동일하게 뉴스를 점수화하여,직관적으로 뉴스에 대한 AI의 판단을 볼 수 있도록 합니다! 
-2. **시장적 뉴스만이 아닌 비시장적 뉴스의 영역 탐지**  
-   - 시장적 뉴스의 요약과 점수화는 물론,시장적 뉴스가 아닌 뉴스까지 AI가 분석해 시장적 뉴스로의 변환 가능성을 탐색합니다!  
+투자자 의견(20%), 애널리스트 평가(40%), 기업 영향도 분석(40%)을 반영한 가중 합산 방식으로 0~100 점수를 제공합니다.
+
+2. 시장적 뉴스만이 아닌 비시장적 뉴스의 영역 탐지
+단순한 주가 변동 기사뿐만 아니라, 정책, 산업, 기술, 해외 이슈 등의 비시장적 뉴스를 함께 분석합니다.
+
+AI가 해당 뉴스를 시장과의 연관성 측면에서 판단하고, 영향이 갈 수 있는 관련 기업 및 종목을 자동 추천합니다.
+
+
 ---
 
 ## 👥 팀 소개
