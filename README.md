@@ -8,8 +8,18 @@
 | 백엔드 프레임워크 | <img src="https://img.shields.io/badge/-Flask-343422.svg?logo=Flask&style=for-the-badge&logoColor=white"> |
 | AI 모델 | <img src="https://img.shields.io/badge/-Clova AI-343422.svg?logo=Naver&style=for-the-badge&logoColor=03C75A"> |
 
-### 현재 배포중인 테스트 플랫폼
-https://ai3-client-eight.vercel.app/
+
+
+## 🚀 현재 배포 중인 테스트 플랫폼  
+🔗 [https://ai3-client-eight.vercel.app/](https://ai3-client-eight.vercel.app/)
+
+
+
+## 📂 관련 레포지토리  
+- 🖥️ [클라이언트 레포지토리 (현재 위치)](https://github.com/mark77234/ai3_client)  
+- ⚙️ [서버 레포지토리 바로가기](https://github.com/mark77234/ai3_server)
+
+
 
 ## 메인페이지
 
