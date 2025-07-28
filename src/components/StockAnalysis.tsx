@@ -102,11 +102,8 @@ export const StockAnalysis = () => {
   }, []);
   return (
     <div className="bg-white rounded-xl shadow-sm p-4 border border-gray-100">
-      <div className="flex items-center justify-between mb-5">
+      <div className="mb-5">
         <h3 className="text-lg font-bold text-gray-800">주식 AI 분석</h3>
-        <button className="text-blue-600 text-sm font-medium hover:text-blue-800">
-          전체보기
-        </button>
       </div>
       <div className="flex flex-col gap-3">
         {stockAnalysis.map((stock, index) => (

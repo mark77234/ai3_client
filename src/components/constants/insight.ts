@@ -33,6 +33,30 @@ export const AI_EMOTIONS = {
   POSITIVE: "긍정적",
   HOLD: "보류",
   NEGATIVE: "부정적",
-}; // 4. AI 평가로 해도 되고 아니면 애널리스트 평가로 하셔도 됩니다., 객체로 변경하여 키로 감정 구분
-
-  
+};
+//4. 비시장적 뉴스 태그
+export const NON_MARKET_TAGS = {
+  POLITICS: "정치",
+  DIPLOMACY: "외교",
+  SECURITY: "안보",
+  SYSTEM_CHANGE: "제도변경",
+  TRADE_POLICY: "통상정책",
+  LEGAL_ISSUE: "사법이슈",
+  LABOR_SOCIAL: "노동사회",
+  MARKET_CONFIDENCE: "시장신뢰",
+  SUPPLY_CHAIN_RISK: "공급망위협",
+  MACRO_UNCERTAINTY: "거시불확실성",
+  RISK_FACTOR: "리스크요인",
+  POLICY_OPPORTUNITY: "정책기회",
+  KOREA: "대한민국",
+  USA: "미국",
+  CHINA: "중국",
+  NORTH_KOREA: "북한",
+  EU: "EU",
+  SOUTHEAST_ASIA: "동남아",
+  GLOBAL: "글로벌",
+  URGENT: "긴급",
+  PREDICTED: "예고",
+  ONGOING: "진행중",
+  NEEDS_ANALYSIS: "분석필요",
+};

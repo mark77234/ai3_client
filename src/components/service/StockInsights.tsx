@@ -110,7 +110,7 @@ export default function ClovaSummary({ text, onSummary }: ClovaSummaryProps) {
   };
 
   useEffect(() => {
-    if (text && text.length > 5) {
+    if (text && text.length > 5) {//ㅇㅇㅇ
       callClova();
     }
   }, [text]);
@@ -148,10 +148,47 @@ export default function ClovaSummary({ text, onSummary }: ClovaSummaryProps) {
       )}
 
       {summary && (
-        <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+        <div className="bg-white rounded-lg p-6 shadow-sm border border-blue-100">
           <div className="prose prose-sm max-w-none">
-            <div className="whitespace-pre-wrap text-gray-700 leading-relaxed text-sm">
-              {summary}
+            <div className="space-y-4">
+              {summary.split('\n').map((line, index) => {
+                if (line.startsWith('결론:')) {
+                  return (
+                    <div key={index} className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                      <div className="font-semibold text-blue-800 mb-1 flex items-center gap-2">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        핵심 결론
+                      </div>
+                      <div className="text-blue-700 font-medium">
+                        {line.replace('결론:', '').trim()}
+                      </div>
+                    </div>
+                  );
+                } else if (line.match(/^\d+\./)) {
+                  return (
+                    <div key={index} className="bg-gray-50 border-l-4 border-gray-300 p-4 rounded-r-lg">
+                      <div className="font-semibold text-gray-700 mb-2 flex items-center gap-2">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {line.split('.')[0]}번째 요약
+                      </div>
+                      <div className="text-gray-700 leading-relaxed">
+                        {line.replace(/^\d+\.\s*/, '')}
+                      </div>
+                    </div>
+                  );
+                } else if (line.trim()) {
+                  return (
+                    <div key={index} className="text-gray-700 leading-relaxed">
+                      {line}
+                    </div>
+                  );
+                }
+                return null;
+              })}
             </div>
           </div>
         </div>
@@ -159,3 +196,49 @@ export default function ClovaSummary({ text, onSummary }: ClovaSummaryProps) {
     </div>
   );
 }
+
+// 5. 비시장 뉴스 요약 + 영향 기업 도출
+export const getNonMarketNewsSummary = async (
+  text: string
+): Promise<{ summary: string; companies: string[] }> => {
+  const res = await axios.post("https://ai3-server.onrender.com/api/clova-summary", {
+    messages: [
+      {
+        role: "system",
+        content:
+          "- 당신은 30년 동안 정책 및 외교 뉴스를 분석한 베테랑 전략분석가입니다.\n" +
+          "- 아래 형식을 반드시 지키세요:\n" +
+          "1. 뉴스를 3줄로 간결히 요약하세요.\n" +
+          "2. 영향 받을 가능성이 있는 기업명을 구체적인 이유와 함께 나열하세요.\n" +
+          "3. 반드시 기업명을 한국어로 명확하게 적고, 영향 이유는 1문장으로 간단히 정리하세요.\n" +
+          "4. 결과는 아래와 같은 JSON 형식으로 반환하세요:\n" +
+          "{ \"summary\": \"요약내용\", \"companies\": [\"기업1 (이유)\", \"기업2 (이유)\"] }",
+      },
+      {
+        role: "user",
+        content: text,
+      },
+    ],
+    temperature: 0.3,
+    topP: 0.9,
+    repetitionPenalty: 1.05,
+    maxTokens: 512,
+  });
+
+  const resultText = res.data.result.message.content;
+
+  try {
+    const result = JSON.parse(resultText);
+    return {
+      summary: result.summary || "",
+      companies: result.companies || [],
+    };
+  } catch (e) {
+    // 실패 시 fallback 처리
+    return {
+      summary: "요약 실패",
+      companies: [],
+    };
+  }
+};
+

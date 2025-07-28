@@ -13,7 +13,7 @@ import { EMOTIONS } from "./components/constants/emotion";
 render(<App />, document.getElementById("root"));
 
 // 내부 저장소
-export let TOTAL_SCORES: number[] = [0, 0, 0, 0];
+export let TOTAL_SCORES: number[] = [0, 0, 0, 0, 0];
 
 // 외부 접근 안전 함수
 export function getTotalScores(): number[] {
@@ -25,7 +25,7 @@ export function getTotalScores(): number[] {
   try {
     // 더미 데이터로 점수 계산 (실제로는 각 인사이트의 실제 데이터를 사용해야 함)
     const totalScores = await Promise.all(
-      INSIGHT_CONTENTS.slice(0, 4).map(async (_, idx) => {
+      INSIGHT_CONTENTS.slice(0, 5).map(async (_, idx) => {
         try {
           // 감정 점수 (20점) - constant/EMOTIONS 데이터 사용 80 20,60 40 형식으로 바꾸었습니다.
           const emotionData = EMOTIONS[idx];
@@ -56,6 +56,6 @@ export function getTotalScores(): number[] {
     console.log("TOTAL_SCORES 초기화 완료:", TOTAL_SCORES);
   } catch (err) {
     console.error("점수 초기화 실패:", err);
-    TOTAL_SCORES = [0, 0, 0, 0];
+    TOTAL_SCORES = [0, 0, 0, 0, 0];
   }
 })();

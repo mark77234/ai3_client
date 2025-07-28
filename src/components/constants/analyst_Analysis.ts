@@ -4,11 +4,13 @@
 export const ANALYST_COMPANY: string [] = [//1.기업 분석 분류,매수 중립 매도의 3가지의 종류 존재 외국 주식의 경우 STRONG BUY,BUY,HOLD,SELL,STRONG SELL의 5가지의 종류 존재 
     `매수 83.9%`,
     ``,
+    `중립 50.0%`,
     ``,
     `BUY 72.8%`
 ]
 export const ANALYST_Industry: string [] = [//2.산업 분석 분류,비중확대,중립,비중감소의 3가지의 종류 존재
     `비중확대 83.9%`,
+    `중립 50.0%`,
     `비중확대 84.1%`,
     `비중확대 83.9%`,
     `비중확대 79.8%`
