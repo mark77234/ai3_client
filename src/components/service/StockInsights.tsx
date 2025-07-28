@@ -196,6 +196,7 @@ export default function ClovaSummary({ text, onSummary }: ClovaSummaryProps) {
     </div>
   );
 }
+
 // 5. 비시장 뉴스 요약 + 영향 기업 도출
 export const getNonMarketNewsSummary = async (
   text: string
@@ -240,3 +241,4 @@ export const getNonMarketNewsSummary = async (
     };
   }
 };
+
