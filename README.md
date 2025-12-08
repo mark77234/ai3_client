@@ -101,19 +101,19 @@ AI가 해당 뉴스를 시장과의 연관성 측면에서 판단하고, 영향�
       <img src="https://github.com/user-attachments/assets/1544208b-92f0-4bec-a3e1-1c87af598f15" width="150" alt="이병찬" /><br>
       이병찬
       <br>
-      부산대학교 IT응용공학과 21학번
+      프론트엔드
     </td>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/61de74ae-1887-454e-8111-7a20bc7d611c" width="150" alt="원준서" /><br>
       원준서 
       <br>
-      부산대학교 IT응용공학과 21학번
+      프론트엔드 & 백엔드
     </td>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/349b4717-fa1b-4fe4-b405-e66bdce2d6d3" width="150" alt="황중경" /><br>
       황중경
       <br>
-      부산대학교 IT응용공학과 21학번
+      기획
     </td>
   </tr>
 </table>
